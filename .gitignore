@@ -1,0 +1,23 @@
+# ignore files
+*.elc
+*.pyc
+*.lock
+*.7z
+*~
+*.stackdump
+*.swp
+.#*
+Thumbs.db
+tramp
+org-clock-save.el
+
+# ignore folders
+server/
+.svn/
+.cvs/
+CVS/
+site-lisp/
+auto-save-list/
+elpa/
+yasnippets/
+
