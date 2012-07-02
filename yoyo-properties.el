@@ -65,18 +65,18 @@
     (progn
       ;;;;设置初始化边框
       (setq default-frame-alist
-	    '((top . 0)(left . 0)(width . 80)(height . 35)))
+            '((top . 0)(left . 0)(width . 80)(height . 35)))
       (set-scroll-bar-mode nil)
       ;; hl-line-mode setting
       (wcy-color-theme-adjust-hl-mode-face)
+      ;; Highlight line mode
+      (global-hl-line-mode t)
       ))
 
 
 ;; (tool-bar-mode nil)
 (setq tool-bar-mode nil)
 (setq-default abbrev-mode t)
-;; Highlight line mode
-(global-hl-line-mode t)
 
 ;; recentf mode
 ;; enable recent files mode.
