@@ -1,4 +1,4 @@
-;; ;;; Code:
+﻿;; ;;; Code:
 ;; (add-to-list 'load-path "~/lib/emacs-lisp/org-6.01d/lisp")
 ;; (add-to-list 'load-path "~/lib/emacs-lisp/org-6.01d/contrib/lisp")
 

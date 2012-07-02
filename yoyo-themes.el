@@ -1,4 +1,4 @@
-;;; Color theme based on Tango Palette.
+﻿;;; Color theme based on Tango Palette.
 ;;; Created by zhuqin <zhuqin83@gmail.com>
 ;; color plate
 ;; Butter       fce94f  edd400  c4a000

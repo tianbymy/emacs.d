@@ -1,4 +1,4 @@
- ;;(setq compile-command "gcc -Wall -g ")    ;;默认编译命令为gcc
+﻿ ;;(setq compile-command "gcc -Wall -g ")    ;;默认编译命令为gcc
  (setq compile-command "cl ")    ;;Windows平台使用VC编译器 cl 命令
  ;;(setq compile-command "javac -d . ")    ;;默认编译命令为javac
 

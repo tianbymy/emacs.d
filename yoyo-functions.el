@@ -1,4 +1,4 @@
-;; Functions
+﻿;; Functions
 ;; Open a new buffer to run eshell
 (defun open-eshell-other-buffer ()
     "Open eshell in other buffer"

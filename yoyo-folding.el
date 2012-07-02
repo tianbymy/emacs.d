@@ -1,4 +1,4 @@
-;;小知识：autoload和load相比，前者是在需要时启动folding.el，
+﻿;;小知识：autoload和load相比，前者是在需要时启动folding.el，
 ;而在emacs启动时只加载这个函数名而已，也就是让Emacs知道有这个函数。
 ;而使用load，则在Emacs启动时便加载，如果加载东西很多，emacs启动会很慢。
 (autoload 'folding-mode "folding"
