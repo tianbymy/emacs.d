@@ -50,13 +50,24 @@
       (setq tramp-default-method "plink")
       ))
 
+(if (string= "darwin" system-type)
+    (progn
+      ;;;;Fonts
+      (set-default-font "Monaco:pixelsize=13:bold")
+      ;; ;;(set-default-font "Anonymous:pixelsize=12")
+      (set-fontset-font (frame-parameter nil 'font)
+			'han '("STSong" . "unicode-bmp"))
+      (toggle-keyboard-settings)
+      ))
 
 (if (not (string= "windows-nt" system-type))
     (progn
-      ;; default coding system for writing
+      (prefer-coding-system       'utf-8)
+      (set-default-coding-systems 'utf-8)
+      (set-terminal-coding-system 'utf-8)
+      (set-keyboard-coding-system 'utf-8)
+      ;; This from a japanese individual.  I hope it works.
       (setq default-buffer-file-coding-system 'utf-8)
-      ;; default coding system for reading
-      (prefer-coding-system 'utf-8)
       ))
 
 ;(setq unicad-mode t)
@@ -71,11 +82,14 @@
       (wcy-color-theme-adjust-hl-mode-face)
       ;; Highlight line mode
       (global-hl-line-mode t)
+      ;; bookmark
+      (setq-default bm-buffer-persistence t)
+      (setq bm-highlight-style 'bm-highlight-only-fringe)
+      ;;(setq bm-highlight-style 'bm-highlight-line-and-fringe)
       ))
 
 
-;; (tool-bar-mode nil)
-(setq tool-bar-mode nil)
+(tool-bar-mode -1)
 (setq-default abbrev-mode t)
 
 ;; recentf mode
@@ -178,7 +192,7 @@
 (setq kept-old-versions 3);;备份最原始的版本两次，及第一次编辑前的文档，和第二次编辑前的文档
 (setq kept-new-versions 5);;备份最新的版本3次，理解同上
 (setq delete-old-versions t);;删掉不属于以上3种版本的版本
-(setq backup-directory-alist '(("." . "~/backup/emacs/")));;设置备份文件的路径
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")));;设置备份文件的路径
 (setq backup-by-copying t);;备份设置方法，直接拷贝
 
 ;; Dired Delete files by moving to trash
@@ -238,10 +252,18 @@
 ;; use C-n for next new line
 ;;(setq next-line-add-newlines nil)
 
-;; bookmark
-(setq-default bm-buffer-persistence t)
-(setq bm-highlight-style 'bm-highlight-only-fringe)
-;;(setq bm-highlight-style 'bm-highlight-line-and-fringe)
+;; sourcepair settings
+(setq sourcepair-source-path '( "." "../*" ))
+(setq sourcepair-header-path '( "." "include" "../include" "../*"))
+(setq sourcepair-recurse-ignore '( "CVS" "Obj" "Debug" "Release" ".svn"))
+(setq sourcepair-source-extensions '(".c" ".cpp" ".cxx" ".cc"))
+(setq sourcepair-header-extensions '(".h" ".hpp" ".hh"))
+
+;; use jabber
+(setq jabber-account-list
+      '(("heychenbin@gmail.com"
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl))))
 
 ;; Identify trailing whitepace characters at end of line
 ;; and end of file in Emacs
@@ -269,7 +291,7 @@
 (setq w3m-command-arguments '("-cookie" "-F"))
 (setq w3m-use-cookies t)
 (setq w3m-home-page "about://bookmark/")
-;; (setq browse-url-browser-function 'w3m-browse-url)
+;;(setq browse-url-browser-function 'w3m-browse-url)
 (setq browse-url-browser-function 'w3m-browse-url-other-window)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
 (setq w3m-default-display-inline-images t)

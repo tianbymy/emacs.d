@@ -305,5 +305,21 @@ if kill buffer failed, do nothing"
     (other-window 1)
     (w3m-browse-url url newwin)))
 
+(defvar toggle-keyboard-setting-on-mac nil)
+(defun toggle-keyboard-settings ()
+  (interactive)
+  (if (not toggle-keyboard-setting-on-mac)
+      (progn (setq mac-option-key-is-meta nil
+		   mac-command-key-is-meta t
+		   mac-command-modifier 'meta
+		   mac-option-modifier nil)
+	     (setq toggle-keyboard-setting-on-mac t))
+      (progn (setq mac-option-key-is-meta t
+		   mac-command-key-is-meta nil
+		   mac-command-modifier nil
+		   mac-option-modifier 'meta)
+	     (setq toggle-keyboard-setting-on-mac nil))))
+
+
 (provide 'yoyo-functions)
 
