@@ -13,6 +13,12 @@
 
 ;; Color themes
 (color-theme-initialize)
+
+;; different when vary system
+(if window-system
+    (color-theme-gnome-3-adwaita)
+  (color-theme-solarized-dark))
+
 ;;(color-theme-scintilla)
 ;;(color-theme-classic)
 ;;(color-theme-dark-blue2)
@@ -21,6 +27,7 @@
 ;;(color-theme-aalto-light)
 ;;(color-theme-charcoald-black)
 ;;(color-theme-darkmate)
+;;(color-theme-solarized-dark)
 ;;(color-theme-tango)
 ;;(color-theme-tango-2)
 ;;(color-theme-tango-light)
@@ -30,7 +37,7 @@
 ;;(color-theme-snowish)
 ;;(color-theme-gnome2)
 ;;(color-theme-subtle-hacker)
-(color-theme-gnome-3-adwaita)
+;;(color-theme-gnome-3-adwaita)
 ;;(color-theme-sitaramv-solaris)
 ;;(color-theme-infodoc)
 ;;(color-theme-solarized-light)
