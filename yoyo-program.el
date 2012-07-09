@@ -85,6 +85,11 @@
 	  '(lambda ()
 	    (hs-minor-mode)))
 
+(setq pylookup-dir "~/document/python/")
+(add-to-list 'load-path pylookup-dir)
+(setq pylookup-program "~/.emacs.d/site-lisp/tsgates-pylookup/pylookup.py")
+(setq pylookup-db-file "~/document/python/pylookup.db")
+
 ;; already translate msf-abbrev to yasnippet
 ;;msf-abbrev mode
 ;; (setq-default abbrev-mode t)

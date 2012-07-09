@@ -168,4 +168,6 @@
 ;; (fold-add-to-marks-list 'shell-script-mode "# {{{" "# }}}" nil)
 ;; (fold-add-to-marks-list 'sh-mode "# {{{ " "# }}}" nil)
 
+(global-set-key "\C-ch" 'pylookup-lookup)
+
 (provide 'yoyo-key-binding)

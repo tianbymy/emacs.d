@@ -54,6 +54,7 @@
   'color-theme-dawn-night
   'iimage
   'org-install
+  'pylookup
 
 ;; Customs
   'yoyo-themes
