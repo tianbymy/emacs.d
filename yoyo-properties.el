@@ -133,7 +133,8 @@
 ;;;;设置时间stamp
 (setq time-stamp-active t)
 (setq time-stamp-warn-inactive t)
-(setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S Bin")
+(setq time-stamp-format "%Y-%02m-%02d %3a %02H:%02M:%02S")
+(add-hook 'before-save-hook 'time-stamp)
 
 (auto-image-file-mode t)  ;;打开图片显示功能
 (transient-mark-mode t)   ;;反显示选中区域
@@ -158,7 +159,7 @@
 ;;(setq make-backup-files nil)         ;;不产生备份文件
 (setq x-select-enable-clipboard t)     ;;允许emacs和外部其他程序粘贴
 
-(menu-bar-mode nil)                    ;;关闭菜单栏
+;; (menu-bar-mode nil)                    ;;关闭菜单栏
 ;; (setq menu-bar-mode nil)
 (setq default-directory "~/")          ;;设置打开文件的缺省路径
 ;;(setq-default cursor-type 'bar)      ;;设置光标为竖线
