@@ -39,7 +39,6 @@
   'slime
   'dropdown-list
 ; 'auto-complete-config
-  'w3m
   'bookmark+
   'color-theme-solarized
   'flymake

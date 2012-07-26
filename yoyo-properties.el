@@ -17,7 +17,7 @@
 ;; different when vary system
 (if window-system
     (color-theme-gnome-3-adwaita)
-  (color-theme-solarized-dark))
+  (color-theme-cl-dawn))
 
 ;;(color-theme-scintilla)
 ;;(color-theme-classic)
@@ -83,7 +83,7 @@
     (progn
       ;;;;设置初始化边框
       (setq default-frame-alist
-            '((top . 0)(left . 0)(width . 80)(height . 35)))
+	    '((top . 0)(left . 0)(width . 80)(height . 35)))
       (set-scroll-bar-mode nil)
       ;; hl-line-mode setting
       (wcy-color-theme-adjust-hl-mode-face)
@@ -296,28 +296,32 @@
 ;;(require 'w3m-load)
 ;; (require 'w3m-e21)
 ;; (provide 'w3m-e23)
-(setq w3m-use-favicon nil)
-(setq w3m-command-arguments '("-cookie" "-F"))
-(setq w3m-use-cookies t)
-(setq w3m-home-page "about://bookmark/")
-;;(setq browse-url-browser-function 'w3m-browse-url)
-(setq browse-url-browser-function 'w3m-browse-url-other-window)
-(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(setq w3m-default-display-inline-images t)
-(setq w3m-use-mule-ucs t)
-(define-key w3m-mode-map (kbd "C-t") 'set-mark-command)
-(define-key w3m-mode-map [left]      'backward-char)
-(define-key w3m-mode-map [down]      'next-line)
-(define-key w3m-mode-map [up]        'previous-line)
-(define-key w3m-mode-map [right]     'forward-char)
-(define-key w3m-mode-map (kbd "0")   'w3m-beginning-of-line)
-(define-key w3m-mode-map (kbd "n")   'w3m-next-anchor)
-(define-key w3m-mode-map (kbd "p")   'w3m-previous-anchor)
+;; w3m may not exists
+(if (ignore-errors (require 'w3m))
+    (progn
+      (setq w3m-use-favicon nil)
+      (setq w3m-command-arguments '("-cookie" "-F"))
+      (setq w3m-use-cookies t)
+      (setq w3m-home-page "about://bookmark/")
+      ;; (setq browse-url-browser-function 'w3m-browse-url)
+      (setq browse-url-browser-function 'w3m-browse-url-other-window)
+      (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+      (setq w3m-default-display-inline-images t)
+      (setq w3m-use-mule-ucs t)
+      (define-key w3m-mode-map (kbd "C-t") 'set-mark-command)
+      (define-key w3m-mode-map [left]      'backward-char)
+      (define-key w3m-mode-map [down]      'next-line)
+      (define-key w3m-mode-map [up]        'previous-line)
+      (define-key w3m-mode-map [right]     'forward-char)
+      (define-key w3m-mode-map (kbd "0")   'w3m-beginning-of-line)
+      (define-key w3m-mode-map (kbd "n")   'w3m-next-anchor)
+      (define-key w3m-mode-map (kbd "p")   'w3m-previous-anchor)
 
-(setq w3m-command-arguments
-     (nconc w3m-command-arguments
-          '("-o" "http_proxy=http://proxynj.zte.com.cn:80/")))
-(setq w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra"))
+      (setq w3m-command-arguments
+	    (nconc w3m-command-arguments
+		   '("-o" "http_proxy=http://proxynj.zte.com.cn:80/")))
+      (setq w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra"))
+      ))
 
 ;; (setq w3m-coding-system           'utf-8
 ;;       w3m-file-coding-system      'utf-8
