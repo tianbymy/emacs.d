@@ -261,13 +261,6 @@
 ;; use C-n for next new line
 ;;(setq next-line-add-newlines nil)
 
-;; sourcepair settings
-(setq sourcepair-source-path '( "." "../*" ))
-(setq sourcepair-header-path '( "." "include" "../include" "../*"))
-(setq sourcepair-recurse-ignore '( "CVS" "Obj" "Debug" "Release" ".svn"))
-(setq sourcepair-source-extensions '(".c" ".cpp" ".cxx" ".cc"))
-(setq sourcepair-header-extensions '(".h" ".hpp" ".hh"))
-
 ;; use jabber
 (setq jabber-account-list
       '(("heychenbin@gmail.com"
