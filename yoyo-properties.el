@@ -65,6 +65,7 @@
       (set-fontset-font (frame-parameter nil 'font)
 			'han '("STSong" . "unicode-bmp"))
       (toggle-keyboard-settings)
+      (setq tramp-default-method "ssh")
       ))
 
 (if (not (string= "windows-nt" system-type))
