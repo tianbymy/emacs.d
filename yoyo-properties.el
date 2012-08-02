@@ -17,7 +17,7 @@
 ;; different when vary system
 (if window-system
     (color-theme-gnome-3-adwaita)
-  (color-theme-solarized-dark))
+  (color-theme-cl-dawn))
 
 ;;(color-theme-scintilla)
 ;;(color-theme-classic)
@@ -84,7 +84,7 @@
     (progn
       ;;;;设置初始化边框
       (setq default-frame-alist
-            '((top . 0)(left . 0)(width . 80)(height . 35)))
+	    '((top . 0)(left . 0)(width . 80)(height . 35)))
       (set-scroll-bar-mode nil)
       ;; hl-line-mode setting
       (wcy-color-theme-adjust-hl-mode-face)
@@ -134,7 +134,8 @@
 ;;;;设置时间stamp
 (setq time-stamp-active t)
 (setq time-stamp-warn-inactive t)
-(setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S Bin")
+(setq time-stamp-format "%Y-%02m-%02d %3a %02H:%02M:%02S")
+(add-hook 'before-save-hook 'time-stamp)
 
 (auto-image-file-mode t)  ;;打开图片显示功能
 (transient-mark-mode t)   ;;反显示选中区域
@@ -159,7 +160,7 @@
 ;;(setq make-backup-files nil)         ;;不产生备份文件
 (setq x-select-enable-clipboard t)     ;;允许emacs和外部其他程序粘贴
 
-(menu-bar-mode nil)                    ;;关闭菜单栏
+;; (menu-bar-mode nil)                    ;;关闭菜单栏
 ;; (setq menu-bar-mode nil)
 (setq default-directory "~/")          ;;设置打开文件的缺省路径
 ;;(setq-default cursor-type 'bar)      ;;设置光标为竖线
@@ -261,13 +262,6 @@
 ;; use C-n for next new line
 ;;(setq next-line-add-newlines nil)
 
-;; sourcepair settings
-(setq sourcepair-source-path '( "." "../*" ))
-(setq sourcepair-header-path '( "." "include" "../include" "../*"))
-(setq sourcepair-recurse-ignore '( "CVS" "Obj" "Debug" "Release" ".svn"))
-(setq sourcepair-source-extensions '(".c" ".cpp" ".cxx" ".cc"))
-(setq sourcepair-header-extensions '(".h" ".hpp" ".hh"))
-
 ;; use jabber
 (setq jabber-account-list
       '(("heychenbin@gmail.com"
@@ -296,28 +290,32 @@
 ;;(require 'w3m-load)
 ;; (require 'w3m-e21)
 ;; (provide 'w3m-e23)
-(setq w3m-use-favicon nil)
-(setq w3m-command-arguments '("-cookie" "-F"))
-(setq w3m-use-cookies t)
-(setq w3m-home-page "about://bookmark/")
-;;(setq browse-url-browser-function 'w3m-browse-url)
-(setq browse-url-browser-function 'w3m-browse-url-other-window)
-(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(setq w3m-default-display-inline-images t)
-(setq w3m-use-mule-ucs t)
-(define-key w3m-mode-map (kbd "C-t") 'set-mark-command)
-(define-key w3m-mode-map [left]      'backward-char)
-(define-key w3m-mode-map [down]      'next-line)
-(define-key w3m-mode-map [up]        'previous-line)
-(define-key w3m-mode-map [right]     'forward-char)
-(define-key w3m-mode-map (kbd "0")   'w3m-beginning-of-line)
-(define-key w3m-mode-map (kbd "n")   'w3m-next-anchor)
-(define-key w3m-mode-map (kbd "p")   'w3m-previous-anchor)
+;; w3m may not exists
+(if (ignore-errors (require 'w3m))
+    (progn
+      (setq w3m-use-favicon nil)
+      (setq w3m-command-arguments '("-cookie" "-F"))
+      (setq w3m-use-cookies t)
+      (setq w3m-home-page "about://bookmark/")
+      ;; (setq browse-url-browser-function 'w3m-browse-url)
+      (setq browse-url-browser-function 'w3m-browse-url-other-window)
+      (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+      (setq w3m-default-display-inline-images t)
+      (setq w3m-use-mule-ucs t)
+      (define-key w3m-mode-map (kbd "C-t") 'set-mark-command)
+      (define-key w3m-mode-map [left]      'backward-char)
+      (define-key w3m-mode-map [down]      'next-line)
+      (define-key w3m-mode-map [up]        'previous-line)
+      (define-key w3m-mode-map [right]     'forward-char)
+      (define-key w3m-mode-map (kbd "0")   'w3m-beginning-of-line)
+      (define-key w3m-mode-map (kbd "n")   'w3m-next-anchor)
+      (define-key w3m-mode-map (kbd "p")   'w3m-previous-anchor)
 
-(setq w3m-command-arguments
-     (nconc w3m-command-arguments
-          '("-o" "http_proxy=http://proxynj.zte.com.cn:80/")))
-(setq w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra"))
+      (setq w3m-command-arguments
+	    (nconc w3m-command-arguments
+		   '("-o" "http_proxy=http://proxynj.zte.com.cn:80/")))
+      (setq w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra"))
+      ))
 
 ;; (setq w3m-coding-system           'utf-8
 ;;       w3m-file-coding-system      'utf-8
