@@ -312,7 +312,7 @@
 
       (setq w3m-command-arguments
 	    (nconc w3m-command-arguments
-		   '("-o" "http_proxy=http://proxynj.zte.com.cn:80/")))
+		   '("-o" "http_proxy=http://proxynj.zte.com.cn:80/" "-o" "https_proxy=https://proxynj.zte.com.cn:80/")))
       (setq w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra"))
       ))
 
