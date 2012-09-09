@@ -43,7 +43,7 @@
 ;;(color-theme-solarized-light)
 ;;(color-theme-solarized-dark)
 ;;(color-theme-cl-dawn)
-;;(color-theme-cl-night)
+(color-theme-cl-night)
 
 ;;;;设置字体
 (if (string= "windows-nt" system-type)
@@ -311,10 +311,10 @@
       (define-key w3m-mode-map (kbd "n")   'w3m-next-anchor)
       (define-key w3m-mode-map (kbd "p")   'w3m-previous-anchor)
 
-      (setq w3m-command-arguments
-	    (nconc w3m-command-arguments
-		   '("-o" "http_proxy=http://proxynj.zte.com.cn:80/" "-o" "https_proxy=https://proxynj.zte.com.cn:80/")))
-      (setq w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra"))
+      (if (string= "windows-nt" system-type)
+	  (setq w3m-command-arguments (nconc w3m-command-arguments
+					     '("-o" "http_proxy=http://proxynj.zte.com.cn:80/" "-o" "https_proxy=https://proxynj.zte.com.cn:80/"))
+		w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra")))
       ))
 
 ;; (setq w3m-coding-system           'utf-8
