@@ -91,6 +91,8 @@
                              "~/Org/notes.org"))
 
 ;; Org Mode 的TODO项
+
+
 (setq org-todo-keywords
        '((sequence "TODO(t)" "ACTIVE(a@)" "WAIT(w@/!)" "SUSPNEDED(s@/!)"  "|"
                    "DONE(d!)" "CANCELED(c@)")))
@@ -162,9 +164,9 @@
 
 	;; ... add all the components here (see below)...
 	("org-notes"
-	 :base-directory "~/notebook/notes/"
+	 :base-directory "~/Documents/notebook/notes/"
 	 :base-extension "org"
-	 :publishing-directory "~/notebook/public_html/"
+	 :publishing-directory "~/Documents/notebook/public_html/"
 	 :recursive t
 	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4             ; Just the default for this project.
@@ -172,9 +174,9 @@
 	 )
 
 	("org-static"
-	 :base-directory "~/notes/"
+	 :base-directory "~/Documents/notebook/notes/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	 :publishing-directory "~/notebook/public_html/"
+	 :publishing-directory "~/Documents/notebook/public_html/"
 	 :recursive t
 	 :publishing-function org-publish-attachment
 	 )
