@@ -16,7 +16,9 @@
 
 ;; different when vary system
 (if window-system
-    (color-theme-gnome-3-adwaita)
+    ;; (color-theme-gnome-3-adwaita)
+    ;; (color-theme-solarized-light)
+    (color-theme-tango)
   (color-theme-cl-dawn))
 
 ;;(color-theme-scintilla)
@@ -48,8 +50,8 @@
 ;;;;设置字体
 (if (string= "windows-nt" system-type)
     (progn
-      (set-default-font "DejaVu Sans Mono:pixelsize=13:bold")
-      ;;(set-default-font "consolas:pixelsize=13")
+      ;; (set-default-font "DejaVu Sans Mono:pixelsize=13")
+      (set-default-font "consolas:pixelsize=14")
       ;;(set-default-font "Anonymous:pixelsize=12")
       (set-fontset-font (frame-parameter nil 'font)
                         'han '("微软雅黑" . "unicode-bmp"))

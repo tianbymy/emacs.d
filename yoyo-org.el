@@ -91,6 +91,8 @@
                              "~/Org/notes.org"))
 
 ;; Org Mode 的TODO项
+
+
 (setq org-todo-keywords
        '((sequence "TODO(t)" "ACTIVE(a@)" "WAIT(w@/!)" "SUSPNEDED(s@/!)"  "|"
                    "DONE(d!)" "CANCELED(c@)")))
@@ -172,7 +174,7 @@
 	 )
 
 	("org-static"
-	 :base-directory "~/Documents/notebook/notes"
+	 :base-directory "~/Documents/notebook/notes/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
 	 :publishing-directory "~/Documents/notebook/public_html/"
 	 :recursive t

@@ -59,7 +59,7 @@
 (add-hook 'c++-mode-hook
           '(lambda ()
             (c-set-style "stroustrup")
-            (c-toggle-hungry-state)
+            (c-toggle-hungry-state t)
             (gtags-mode 1)
             (hs-minor-mode)
             (idle-highlight-mode t)
@@ -68,7 +68,7 @@
 (add-hook 'c-mode-hook
           '(lambda ()
             (c-set-style "stroustrup")
-            (c-toggle-hungry-state)
+            (c-toggle-hungry-state t)
             (gtags-mode 1)
             (hs-minor-mode)
             (idle-highlight-mode t)
@@ -77,7 +77,7 @@
 (add-hook 'objc-mode-hook
           '(lambda ()
             (hs-minor-mode)
-            (c-toggle-hungry-state)
+            (c-toggle-hungry-state t)
             (idle-highlight-mode t)
             (hide-ifdef-mode)))
 
