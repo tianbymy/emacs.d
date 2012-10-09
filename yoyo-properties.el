@@ -65,9 +65,10 @@
       (set-default-font "Monaco:pixelsize=13:bold")
       ;; ;;(set-default-font "Anonymous:pixelsize=12")
       (set-fontset-font (frame-parameter nil 'font)
-			'han '("STSong" . "unicode-bmp"))
+                        'han '("STSong" . "unicode-bmp"))
       (toggle-keyboard-settings)
       (setq tramp-default-method "ssh")
+      (setq ns-pop-up-frames nil)
       ))
 
 (if (not (string= "windows-nt" system-type))
@@ -86,7 +87,7 @@
     (progn
       ;;;;设置初始化边框
       (setq default-frame-alist
-	    '((top . 0)(left . 0)(width . 80)(height . 35)))
+            '((top . 0)(left . 0)(width . 80)(height . 35)))
       (set-scroll-bar-mode nil)
       ;; hl-line-mode setting
       (wcy-color-theme-adjust-hl-mode-face)
@@ -314,9 +315,9 @@
       (define-key w3m-mode-map (kbd "p")   'w3m-previous-anchor)
 
       (if (string= "windows-nt" system-type)
-	  (setq w3m-command-arguments (nconc w3m-command-arguments
-					     '("-o" "http_proxy=http://proxynj.zte.com.cn:80/" "-o" "https_proxy=https://proxynj.zte.com.cn:80/"))
-		w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra")))
+          (setq w3m-command-arguments (nconc w3m-command-arguments
+                                             '("-o" "http_proxy=http://proxynj.zte.com.cn:80/" "-o" "https_proxy=https://proxynj.zte.com.cn:80/"))
+                w3m-no-proxy-domains '("10.*.*.*" "192.168.*.*" "*.zte.com.cn" "*.zte.intra")))
       ))
 
 ;; (setq w3m-coding-system           'utf-8
