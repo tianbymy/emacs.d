@@ -183,4 +183,6 @@
 
 	("notes" :components ("org-notes" "org-static"))))
 
+(setq org-export-html-coding-system 'utf-8)
+
 (provide 'yoyo-org)
