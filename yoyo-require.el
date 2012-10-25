@@ -54,6 +54,7 @@
   'iimage
   'org-install
   'pylookup
+  'ledger
 
 ;; Customs
   'yoyo-themes
