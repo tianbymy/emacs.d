@@ -18,7 +18,7 @@
 (if window-system
     ;; (color-theme-gnome-3-adwaita)
     ;; (color-theme-solarized-light)
-    (color-theme-tango)
+    (color-theme-deep-blue-up)
   (color-theme-cl-dawn))
 
 ;; (color-theme-scintilla)
