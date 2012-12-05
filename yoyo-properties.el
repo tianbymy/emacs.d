@@ -166,8 +166,9 @@
 ;; (menu-bar-mode nil)                    ;;关闭菜单栏
 ;; (setq menu-bar-mode nil)
 (setq default-directory "~/")          ;;设置打开文件的缺省路径
-;;(setq-default cursor-type 'bar)      ;;设置光标为竖线
-(setq-default cursor-type '(hbar . 3))        ;;设置光标为方块
+;;设置光标形状
+(setq-default cursor-type '(hbar . 3)
+              cursor-in-non-selected-windows 'hollow)
 ;;(setq split-width-threshold 2)       ;;设置默认打开窗口方式为垂直代开，默认为水平打开
 
 ;;滚动页面时比较舒服，不要整页的滚动，防止页面滚动时跳动， scroll-margin 3 可以在靠近屏幕边沿3行时就开始滚动，可以很好的看到上下文。
