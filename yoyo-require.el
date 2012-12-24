@@ -5,6 +5,9 @@
   (cd "~/.emacs.d/site-lisp/")
   (normal-top-level-add-subdirs-to-load-path))
 
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (defun require-extentions (action lst)
   "template for require extensions"
   (mapcar (lambda(ext) "" (funcall action ext)) lst))
@@ -55,6 +58,7 @@
   'org-install
   'pylookup
   'ledger
+  'sr-speedbar
 
 ;; Customs
   'yoyo-themes

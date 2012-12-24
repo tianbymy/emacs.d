@@ -52,6 +52,8 @@
             (define-key gtags-select-mode-map "\C-o" 'gtags-select-tag-other-window)
             (define-key gtags-select-mode-map "\e." 'gtags-select-tag)))
 
+(setq gtags-auto-update t)
+
 ;;载入hideshow模块
 (load-library "hideshow")
 

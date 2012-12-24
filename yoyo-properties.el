@@ -1,7 +1,7 @@
 ﻿;; Properties
 ;; Emacs Server
-(unless (server-running-p)
-  (server-mode t))
+;;(unless (server-running-p)
+;;  (server-mode t))
 
 ;; Save Emacs sessions automatically
 (unless (file-exists-p "~/.emacs.desktop.lock")
@@ -16,7 +16,8 @@
 
 ;; different when vary system
 (if window-system
-    (color-theme-gnome-3-adwaita)
+    ;; (color-theme-gnome-3-adwaita)
+    (color-theme-solarized-dark)
     ;; (color-theme-solarized-light)
     ;; (color-theme-deep-blue-up)
   (color-theme-cl-dawn))
@@ -116,6 +117,9 @@
 (setq speedbar-update-flag nil)
 (setq speedbar-use-images nil)            ;; 不使用 image 的方式
 (setq speedbar-verbosity-level 0)
+
+(setq sr-speedbar-auto-refresh t
+      sr-speedbar-right-side nil)
 
 ;; hippie expand
 (setq hippie-expand-try-functions-list

@@ -13,6 +13,8 @@ org-clock-save.el
 .emms-history
 .org-id-locations
 abbrev_funcs_description
+*.tar
+*.gz
 
 # ignore folders
 server/
