@@ -1,7 +1,8 @@
 ﻿;; Properties
 ;; Emacs Server
-;;(unless (server-running-p)
-;;  (server-mode t))
+(unless (string= "darwin" system-type)
+  (unless (server-running-p)
+    (server-mode t)))
 
 ;; Save Emacs sessions automatically
 (unless (file-exists-p "~/.emacs.desktop.lock")
@@ -17,7 +18,7 @@
 ;; different when vary system
 (if window-system
     ;; (color-theme-gnome-3-adwaita)
-    (color-theme-solarized-dark)
+    (color-theme-tango-light)
     ;; (color-theme-solarized-light)
     ;; (color-theme-deep-blue-up)
   (color-theme-cl-dawn))
