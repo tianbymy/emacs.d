@@ -320,6 +320,11 @@ if kill buffer failed, do nothing"
 		   mac-option-modifier 'meta)
 	     (setq toggle-keyboard-setting-on-mac nil))))
 
+(defun toggle-sr-speed-with-update ()
+  (interactive)
+  (progn
+    (sr-speedbar-toggle)
+    (speedbar-update-contents)))
 
 (provide 'yoyo-functions)
 

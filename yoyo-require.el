@@ -25,7 +25,7 @@
   ;; 'bm
   'highlight-symbol
   'yasnippet
-  'psvn
+  ;; 'psvn
   'cc-mode
   'ido
   'dired-x
