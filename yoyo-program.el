@@ -74,24 +74,24 @@
             (gtags-mode 1)
             (hs-minor-mode)
             (idle-highlight-mode t)
-	    (setq tab-width 4)
-	    (setq indent-tab-mode nil)
+            (setq tab-width 4)
+            (setq indent-tab-mode nil)
             (hide-ifdef-mode)))
 
 (add-hook 'objc-mode-hook
           '(lambda ()
             (hs-minor-mode)
             (c-toggle-hungry-state t)
-	    (setq tab-width 4)
-	    (setq indent-tab-mode nil)
+            (setq tab-width 4)
+            (setq indent-tab-mode nil)
             (idle-highlight-mode t)
             (hide-ifdef-mode)))
 
 (add-hook 'python-mode-hook
-	  '(lambda ()
-	    (setq tab-width 4)
-	    (setq indent-tab-mode nil)
-	    (hs-minor-mode)))
+          '(lambda ()
+            (setq tab-width 4)
+            (setq indent-tab-mode nil)
+            (hs-minor-mode)))
 
 (setq pylookup-dir "~/document/python/")
 (add-to-list 'load-path pylookup-dir)

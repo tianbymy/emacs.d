@@ -366,7 +366,4 @@
                sgml-skip-tag-forward
                nil))
 
-;; powerline
-;; (setq powerline-arrow-shape 'arrow14) ;; best for small fonts
-
 (provide 'yoyo-properties)
