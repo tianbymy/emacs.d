@@ -15,6 +15,7 @@
 (defalias 'sa  'hs-show-all)
 (defalias 'ms  'magit-status)
 (defalias 'opp 'org-publish-project)
+(defalias 'up  'speedbar-update-contents)
 
 ;; Key bindings
 ;;(global-set-key [f3] 'repeat-complex-command)    ;; Do previous M-x Commands again
@@ -22,7 +23,7 @@
 (global-set-key [M-f3] 'view-my-notes)     ;; F3 View Notes
 ;;(global-set-key [C-f4] 'speedbar)        ;; F4 other-window
 ;;(global-set-key [f5] 'other-window)      ;; F5 speedbar
-(global-set-key [f5] 'sr-speedbar-toggle)            ;; F5 speedbar
+(global-set-key [f5] 'toggle-sr-speed-with-update)            ;; F5 speedbar
 
 (global-set-key [C-f6] 'open-eshell-other-buffer) ;; F6 eShell on another buffer
 (global-set-key [f6] 'eshell)              ;; C-F6 eShell
@@ -67,6 +68,7 @@
 (global-set-key "\C-t" 'set-mark-command)    ;; C-t Mark region
 (global-set-key "\M-," 'hs-toggle-hiding)    ;; 绑定自动隐藏
 (global-set-key "\C-x\C-b" 'ibuffer)         ;; 绑定原始buffer功能为ibuffer
+
 ;;lusty-explorer mode
 ;; (global-set-key "\C-x\C-f" 'lusty-file-explorer)
 ;; (global-set-key "\C-x b"   'lusty-buffer-explorer)

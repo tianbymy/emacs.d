@@ -18,9 +18,10 @@
 ;; different when vary system
 (if window-system
     ;; (color-theme-gnome-3-adwaita)
-    (color-theme-tango-light)
+    ;; (color-theme-solarized-dark)
     ;; (color-theme-solarized-light)
-    ;; (color-theme-deep-blue-up)
+    (color-theme-deep-blue-up)
+    ;; (color-theme-cl-night)
   (color-theme-cl-dawn))
 
 ;; (color-theme-scintilla)
@@ -50,7 +51,8 @@
 ;; (color-theme-cl-night)
 
 ;;;;设置字体
-(if (string= "windows-nt" system-type)
+(if (or (string= "windows-nt" system-type)
+	(string= "cygwin" system-type))
     (progn
       ;; (set-default-font "DejaVu Sans Mono:pixelsize=13")
       (set-default-font "consolas:pixelsize=14")
@@ -73,7 +75,8 @@
       (setq ns-pop-up-frames nil)
       ))
 
-(if (not (string= "windows-nt" system-type))
+(if (not (or (string= "windows-nt" system-type)
+	     (string= "cygwin" system-type)))
     (progn
       (prefer-coding-system       'utf-8)
       (set-default-coding-systems 'utf-8)
@@ -149,10 +152,12 @@
 (transient-mark-mode t)   ;;反显示选中区域
 (show-paren-mode 1)       ;;高亮显示配对括号
 (blink-cursor-mode t)     ;;光标是否闪烁
+
 ;;关闭警告音
 (setq visible-bell nil)
 (setq ring-bell-function 'ignore)
 
+(setq ansi-color-for-comint-mode t)
 ;;(global-font-lock-mode t)
 (setq inhibit-startup-message t)       ;;关闭启动画面
 (setq mouse-avoidance-mode 'animate)   ;;光标靠近鼠标时，鼠标自动移开
@@ -238,9 +243,8 @@
 ;;         "~/info/"))
 
 ;; 设置透明度
-(set-frame-parameter (selected-frame) 'alpha (list 96 80))
-(add-to-list 'default-frame-alist (cons 'alpha (list 96 80)))
-
+(set-frame-parameter (selected-frame) 'alpha (list 100 100))
+(add-to-list 'default-frame-alist (cons 'alpha (list 100 100)))
 
 ;; Ediff related
 ;; split window depends on window width
@@ -288,9 +292,10 @@
 
 (setq shell-file-name
       ;; must be in the `PATH' (Windows users)
-      (cond ((executable-find "zsh") "zsh")
+      (cond ((executable-find "bash") "bash")
+	    ((executable-find "cmdproxy.exe") "cmdproxy.exe")
+	    ((executable-find "zsh") "zsh")
             ((executable-find "cmdproxy.exe") "cmdproxy.exe")
-            ((executable-find "bash") "bash")
             (t "cmd.exe"))) ;; = system shell
 
 
