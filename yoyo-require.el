@@ -59,6 +59,7 @@
   'pylookup
   'ledger
   'sr-speedbar
+  'server
 
 ;; Customs
   'yoyo-themes

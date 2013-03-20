@@ -61,6 +61,7 @@
                         'han '("微软雅黑" . "unicode-bmp"))
       ;; Set plink as the default tramp method
       (setq tramp-default-method "plink")
+      (setq url-proxy-services '(("http" . "proxynj.zte.com.cn:80")))
       ))
 
 (if (string= "darwin" system-type)
