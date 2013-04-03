@@ -17,10 +17,10 @@
 
 ;; different when vary system
 (if window-system
-    ;; (color-theme-gnome-3-adwaita)
+    (color-theme-gnome-3-adwaita)
     ;; (color-theme-solarized-dark)
     ;; (color-theme-solarized-light)
-    (color-theme-deep-blue-up)
+    ;; (color-theme-deep-blue-up)
     ;; (color-theme-cl-night)
   (color-theme-cl-dawn))
 
@@ -54,8 +54,9 @@
 (if (or (string= "windows-nt" system-type)
 	(string= "cygwin" system-type))
     (progn
-      ;; (set-default-font "DejaVu Sans Mono:pixelsize=13")
+      ;; (set-default-font "DejaVu Sans Mono:pixelsize=14")
       (set-default-font "consolas:pixelsize=14")
+      ;; (set-default-font "Bitstream Vera Sans Mono:pixelsize=14")
       ;;(set-default-font "Anonymous:pixelsize=12")
       (set-fontset-font (frame-parameter nil 'font)
                         'han '("微软雅黑" . "unicode-bmp"))

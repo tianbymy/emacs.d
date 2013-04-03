@@ -60,7 +60,6 @@
  ;;C++显示模式
 (add-hook 'c++-mode-hook
           '(lambda ()
-            (c-set-style "stroustrup")
             (c-toggle-hungry-state t)
             (gtags-mode 1)
             (hs-minor-mode)
@@ -69,21 +68,16 @@
  ;;C显示模式
 (add-hook 'c-mode-hook
           '(lambda ()
-            (c-set-style "stroustrup")
             (c-toggle-hungry-state t)
             (gtags-mode 1)
             (hs-minor-mode)
             (idle-highlight-mode t)
-            (setq tab-width 4)
-            (setq indent-tab-mode nil)
             (hide-ifdef-mode)))
 
 (add-hook 'objc-mode-hook
           '(lambda ()
             (hs-minor-mode)
             (c-toggle-hungry-state t)
-            (setq tab-width 4)
-            (setq indent-tab-mode nil)
             (idle-highlight-mode t)
             (hide-ifdef-mode)))
 
@@ -92,6 +86,15 @@
             (setq tab-width 4)
             (setq indent-tab-mode nil)
             (hs-minor-mode)))
+
+(setq c-default-style "linux" c-basic-offset 4)
+
+(setq-default c-basic-offset 4
+              tab-width 4
+              indent-tabs-mode nil)
+
+(setq c-offsets-alist '((case-label . +) 
+                        (substatement-open . 0)))
 
 (setq pylookup-dir "~/document/python/")
 (add-to-list 'load-path pylookup-dir)
@@ -246,6 +249,8 @@
 ;; ac-mode
 ;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/ac-dict")
 ;;(ac-config-default)
+
+(setq imenu-auto-rescan t)
 
 
 (provide 'yoyo-program)
