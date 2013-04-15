@@ -22,19 +22,22 @@
 ;;(global-set-key [f3] 'repeat-complex-command)    ;; Do previous M-x Commands again
 (global-set-key [C-f3] 'org-remember)      ;; Ctrl-F3 Remember Mode
 (global-set-key [M-f3] 'view-my-notes)     ;; F3 View Notes
+(global-set-key [f3] 'highlight-symbol-at-point)
+(global-set-key [f4] 'highlight-symbol-next)
+(global-set-key [M-f4] 'highlight-symbol-prev)
 ;;(global-set-key [C-f4] 'speedbar)        ;; F4 other-window
 ;;(global-set-key [f5] 'other-window)      ;; F5 speedbar
 (global-set-key [f5] 'toggle-sr-speed-with-update)            ;; F5 speedbar
 
 (global-set-key [C-f6] 'open-eshell-other-buffer) ;; F6 eShell on another buffer
 (global-set-key [f6] 'eshell)              ;; C-F6 eShell
-(global-set-key [f7] 'toggle-todo-list)    ;; toggle todo list
-(global-set-key [f8] 'linum-mode)          ;; F8为打开行号开关
-
+(global-set-key [f7] 'linum-mode)          ;; F8为打开行号开关
 ;; Tabbar mode
-(global-set-key [(C-f8)] 'tabbar-mode)
+(global-set-key [(C-f7)] 'tabbar-mode)
 
+(global-set-key [f8] 'toggle-todo-list)    ;; toggle todo list
 ;;(global-set-key [f9] 'tool-bar-mode)    ;; F9打开或关闭工具栏
+(global-set-key [f9] 'select-all-buffer-and-untabify)
 (global-set-key [C-f9] 'bookmark-set)     ;; F9 Set Bookmark
 (global-set-key [f10]   'list-bookmarks)   ;; C-F9 List Bookmark
 ;; (global-set-key [f10]  'menu-bar-mode)    ;; F10打开关闭菜单栏
@@ -48,7 +51,6 @@
 ;; 将 M-/ 替换为hippie-expand
 (global-set-key [(meta ?/)] 'hippie-expand)
 
-(global-set-key [f9] 'select-all-buffer-and-untabify)
 (global-set-key [(meta f6)] 'insert-add-stamp-with-current-time)
 (global-set-key [(meta f7)] 'insert-modify-stamp-with-current-time)
 (global-set-key [(meta f8)] 'insert-delete-stamp-with-current-time)
@@ -103,9 +105,6 @@
       (global-set-key [f2]   'bm-next)
       ))
 
-(global-set-key [f3] 'highlight-symbol-at-point)
-(global-set-key [f4] 'highlight-symbol-next)
-(global-set-key [M-f4] 'highlight-symbol-prev)
 (global-set-key (kbd "<S-f2>") 'bm-previous)
 (global-set-key (kbd "<left-fringe> <mouse-5>") 'bm-next-mouse)
 (global-set-key (kbd "<left-fringe> <mouse-4>") 'bm-previous-mouse)
