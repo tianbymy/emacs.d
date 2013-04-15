@@ -15,12 +15,14 @@
 
 (defun toggle-todo-list ()
   (interactive)
-  (if (string= (buffer-file-name)
-               (replace-regexp-in-string "\\\\" "/"
-                                         (concat (downcase (getenv "HOME"))
-                                                 "/Org/todo.org")))
-      (switch-to-buffer (other-buffer))
-    (find-file "~/Org/todo.org")))
+  (message "%s" buffer-file-name)
+  (if (string= (downcase (buffer-file-name))
+               (replace-regexp-in-string
+                "\\\\" "/"
+                (downcase (concat (getenv "HOME")
+                                  "/Documents/Org/todo.org"))))
+        (switch-to-buffer (other-buffer))
+      (find-file "~/Documents/Org/todo.org")))
 
 ;; Insert stamps
 (defun insert-add-stamp-with-current-time ()
