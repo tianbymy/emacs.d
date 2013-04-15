@@ -13,6 +13,15 @@
   ;; (view-file "~/Org/notes.org"))       ;; Changed to open file in order to edit it.
   (find-file "~/Org/scratch.org"))
 
+(defun toggle-todo-list ()
+  (interactive)
+  (if (string= (buffer-file-name)
+               (replace-regexp-in-string "\\\\" "/"
+                                         (concat (downcase (getenv "HOME"))
+                                                 "/Org/todo.org")))
+      (switch-to-buffer (other-buffer))
+    (find-file "~/Org/todo.org")))
+
 ;; Insert stamps
 (defun insert-add-stamp-with-current-time ()
   "Insert a Add Stamp with current time"
@@ -310,15 +319,15 @@ if kill buffer failed, do nothing"
   (interactive)
   (if (not toggle-keyboard-setting-on-mac)
       (progn (setq mac-option-key-is-meta nil
-		   mac-command-key-is-meta t
-		   mac-command-modifier 'meta
-		   mac-option-modifier nil)
-	     (setq toggle-keyboard-setting-on-mac t))
+           mac-command-key-is-meta t
+           mac-command-modifier 'meta
+           mac-option-modifier nil)
+         (setq toggle-keyboard-setting-on-mac t))
       (progn (setq mac-option-key-is-meta t
-		   mac-command-key-is-meta nil
-		   mac-command-modifier nil
-		   mac-option-modifier 'meta)
-	     (setq toggle-keyboard-setting-on-mac nil))))
+           mac-command-key-is-meta nil
+           mac-command-modifier nil
+           mac-option-modifier 'meta)
+         (setq toggle-keyboard-setting-on-mac nil))))
 
 (defun toggle-sr-speed-with-update ()
   (interactive)
@@ -327,4 +336,3 @@ if kill buffer failed, do nothing"
     (speedbar-update-contents)))
 
 (provide 'yoyo-functions)
-

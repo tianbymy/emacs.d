@@ -369,4 +369,8 @@
                sgml-skip-tag-forward
                nil))
 
+;; (require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(setq yaml-indent-offset 4)
+
 (provide 'yoyo-properties)

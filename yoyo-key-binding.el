@@ -16,11 +16,13 @@
 (defalias 'ms  'magit-status)
 (defalias 'opp 'org-publish-project)
 (defalias 'up  'speedbar-update-contents)
+(defalias 'todo 'toggle-todo-list)
 
 ;; Key bindings
 ;;(global-set-key [f3] 'repeat-complex-command)    ;; Do previous M-x Commands again
 (global-set-key [C-f3] 'org-remember)      ;; Ctrl-F3 Remember Mode
 (global-set-key [M-f3] 'view-my-notes)     ;; F3 View Notes
+(global-set-key [f4] 'toggle-todo-list)
 ;;(global-set-key [C-f4] 'speedbar)        ;; F4 other-window
 ;;(global-set-key [f5] 'other-window)      ;; F5 speedbar
 (global-set-key [f5] 'toggle-sr-speed-with-update)            ;; F5 speedbar
@@ -103,8 +105,8 @@
       ))
 
 (global-set-key [f3] 'highlight-symbol-at-point)
-(global-set-key [f4] 'highlight-symbol-next)
-(global-set-key [M-f4] 'highlight-symbol-prev)
+;; (global-set-key [f4] 'highlight-symbol-next)
+;; (global-set-key [M-f4] 'highlight-symbol-prev)
 (global-set-key (kbd "<S-f2>") 'bm-previous)
 (global-set-key (kbd "<left-fringe> <mouse-5>") 'bm-next-mouse)
 (global-set-key (kbd "<left-fringe> <mouse-4>") 'bm-previous-mouse)
