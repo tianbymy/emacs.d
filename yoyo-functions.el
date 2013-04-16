@@ -11,18 +11,15 @@
   "View my notes in view mode"
   (interactive)
   ;; (view-file "~/Org/notes.org"))       ;; Changed to open file in order to edit it.
-  (find-file "~/Org/scratch.org"))
+  (find-file "~/Documents/Org/scratch.org"))
 
 (defun toggle-todo-list ()
   (interactive)
-  (message "%s" buffer-file-name)
-  (if (string= (downcase (buffer-file-name))
-               (replace-regexp-in-string
-                "\\\\" "/"
-                (downcase (concat (getenv "HOME")
-                                  "/Documents/Org/todo.org"))))
+  ;; (message "switch %s " (buffer-name))
+  (if (string= (downcase (buffer-name))
+               "__todo.org")
         (switch-to-buffer (other-buffer))
-      (find-file "~/Documents/Org/todo.org")))
+      (find-file "~/Documents/Org/__todo.org")))
 
 ;; Insert stamps
 (defun insert-add-stamp-with-current-time ()

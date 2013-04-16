@@ -85,10 +85,10 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done 'time)
 
-(setq org-agenda-files (list "~/Org/diary.org"
-                             "~/Org/work.org"
-                             "~/Org/todo.org"
-                             "~/Org/notes.org"))
+(setq org-agenda-files (list "~/Documents/Org/diary.org"
+                             "~/Documents/Org/work.org"
+                             "~/Documents/Org/todo.org"
+                             "~/Documents/Org/notes.org"))
 
 ;; Org Mode 的TODO项
 
@@ -106,7 +106,7 @@
 
 ;; Remember Mode
 (org-remember-insinuate)
-(setq org-directory "~/Org")
+(setq org-directory "~/Documents/Org")
 (setq org-default-notes-file (concat org-directory "/scratch.org"))
 
 (setq appt-issue-message t)
