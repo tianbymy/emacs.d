@@ -389,4 +389,10 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (setq yaml-indent-offset 4)
 
+(global-rainbow-delimiters-mode)
+
+(custom-set-faces
+ '(show-paren-match ((t (:background "light sea green" :foreground "white"))))
+ '(show-paren-mismatch ((((class color)) (:background "red" :foreground "white")))))
+
 (provide 'yoyo-properties)

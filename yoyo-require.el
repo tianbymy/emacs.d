@@ -60,6 +60,7 @@
   'ledger
   'sr-speedbar
   'server
+  'rainbow-delimiters
 
 ;; Customs
   'yoyo-themes
