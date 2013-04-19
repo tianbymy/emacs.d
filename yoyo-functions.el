@@ -18,7 +18,9 @@
   ;; (message "switch %s " (buffer-name))
   (if (string= (downcase (buffer-name))
                "todo.org")
-        (switch-to-buffer (other-buffer))
+      (progn
+        (save-buffer)
+        (switch-to-buffer (other-buffer)))
       (find-file "~/Documents/Org/todo.org")))
 
 ;; Insert stamps
