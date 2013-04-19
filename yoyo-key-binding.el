@@ -46,6 +46,7 @@
 ;;(global-set-key [f12] 'view-mode)       ;; view-mode
 ;; kill current buffer and suspend this window
 (global-set-key [f12] 'kill-buffer-and-suspend-window)
+(global-set-key [C-f12] 'calc)
 ;;(global-set-key [f12] 'undo)            ;; F12 Undo
 
 ;; 将 M-/ 替换为hippie-expand

@@ -17,9 +17,9 @@
   (interactive)
   ;; (message "switch %s " (buffer-name))
   (if (string= (downcase (buffer-name))
-               "__todo.org")
+               "todo.org")
         (switch-to-buffer (other-buffer))
-      (find-file "~/Documents/Org/__todo.org")))
+      (find-file "~/Documents/Org/todo.org")))
 
 ;; Insert stamps
 (defun insert-add-stamp-with-current-time ()
@@ -333,5 +333,29 @@ if kill buffer failed, do nothing"
   (progn
     (sr-speedbar-toggle)
     (speedbar-update-contents)))
+
+(defun single-process-p (process-name)
+  "if there is more than one same process, return t
+else return nil"
+  (interactive)
+  (let ((count 0)
+        (proc (if (string= "windows-nt" system-type)
+                  (concat process-name ".exe")
+                  process-name)))
+    (dolist (pid (list-system-processes))
+      (let ((pn (process-attributes pid)))
+        (let ((name (cdr (assoc 'comm pn))))
+          (if (string= name proc)
+              (setq count (+ 1 count))))))
+    (if (> count 1)
+        nil
+        t)))
+
+(defun delete-existing-file (file-name &optional trash)
+  "determine file exists before delete it"
+  (if (file-exists-p file-name)
+      (progn
+        (delete-file file-name trash)
+        (message "delete file: %s" file-name))))
 
 (provide 'yoyo-functions)

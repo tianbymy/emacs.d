@@ -252,5 +252,4 @@
 
 (setq imenu-auto-rescan t)
 
-
 (provide 'yoyo-program)

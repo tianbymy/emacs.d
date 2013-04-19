@@ -1,4 +1,12 @@
 ﻿;; Properties
+
+;; if emacs exit unexpectedly, server and desktop lock file may not delete.
+;; when start first one emacs, delete existing lock files
+(if (single-process-p "emacs")
+    (progn
+      (delete-existing-file "~/.emacs.desktop.lock" t)
+      (delete-existing-file "~/.emacs.d/server/server" t)))
+
 ;; Emacs Server
 (unless (string= "darwin" system-type)
   (unless (server-running-p)
@@ -17,7 +25,8 @@
 
 ;; different when vary system
 (if window-system
-    (color-theme-gnome-3-adwaita)
+    (load-theme 'zenburn t)
+    ;; (color-theme-gnome-3-adwaita)
     ;; (color-theme-solarized-dark)
     ;; (color-theme-solarized-light)
     ;; (color-theme-deep-blue-up)
@@ -77,16 +86,23 @@
       (setq ns-pop-up-frames nil)
       ))
 
-(if (not (or (string= "windows-nt" system-type)
-	     (string= "cygwin" system-type)))
-    (progn
-      (prefer-coding-system       'utf-8)
-      (set-default-coding-systems 'utf-8)
-      (set-terminal-coding-system 'utf-8)
-      (set-keyboard-coding-system 'utf-8)
-      ;; This from a japanese individual.  I hope it works.
-      (setq default-buffer-file-coding-system 'utf-8)
-      ))
+;; (if (not (or (string= "windows-nt" system-type)
+;;              (string= "cygwin" system-type)))
+;;     (progn
+;;       (prefer-coding-system       'utf-8)
+;;       (set-default-coding-systems 'utf-8)
+;;       (set-terminal-coding-system 'utf-8)
+;;       (set-keyboard-coding-system 'utf-8)
+;;       ;; This from a japanese individual.  I hope it works.
+;;       (setq default-buffer-file-coding-system 'utf-8)
+;;       ))
+
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+;; This from a japanese individual.  I hope it works.
+(setq default-buffer-file-coding-system 'utf-8)
 
 ;(setq unicad-mode t)
 
